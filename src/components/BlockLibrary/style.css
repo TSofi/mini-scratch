@@ -1,0 +1,3 @@
+.block-lib-container {
+  transform: translateY(calc(100% - 80px));
+}
