@@ -1,5 +1,5 @@
 import { BlockVariant } from 'lib/types'
-import React, { SVGProps } from 'react'
+import { SVGProps } from 'react'
 
 import { blockDefaultWidth } from './const'
 

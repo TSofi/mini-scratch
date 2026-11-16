@@ -1,7 +1,7 @@
 import { Resizeable } from 'components/Resizeable'
 import { Stage } from 'components/Stage'
 import { createVm, VMContext } from 'lib/vm'
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 
 import { BottomHalf } from './BottomHalf'
 import './styles.css'
@@ -13,10 +13,22 @@ const canvasWidth = window.screen.width
 
 export function Layout() {
   const [vm, setVm] = useState<any>(null)
-  const canvasRef = useRef<any>(null);
+  const canvasRef = useRef<any>(null)
+  const vmCreated = useRef(false)
 
   useLayoutEffect(() => {
-    setVm(createVm({ canvas: canvasRef.current, stage: { width: canvasWidth, height: canvasHeight } }))
+    // React 18 StrictMode runs effects twice in development;
+    // the Scratch VM must be created only once for the canvas.
+    if (vmCreated.current) {
+      return
+    }
+    vmCreated.current = true
+    setVm(
+      createVm({
+        canvas: canvasRef.current,
+        stage: { width: canvasWidth, height: canvasHeight },
+      })
+    )
   }, [])
 
   return (

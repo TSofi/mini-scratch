@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 export const getSpriteUrl = (md5Ext: string) =>
   `https://cdn.assets.scratch.mit.edu/internalapi/asset/${md5Ext}/get/`

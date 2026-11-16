@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function ResetIcon(props: any = {}) {
   return (
     <svg

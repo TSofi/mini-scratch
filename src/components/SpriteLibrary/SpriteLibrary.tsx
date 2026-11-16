@@ -1,6 +1,5 @@
 import { SPRITES } from 'lib/sprites'
 import { useVM } from 'lib/vm'
-import React from 'react'
 
 import { SpriteItem } from './SpriteItem'
 

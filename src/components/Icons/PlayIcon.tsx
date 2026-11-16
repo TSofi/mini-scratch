@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function PlayIcon(props: any = {}) {
   return (
     <svg

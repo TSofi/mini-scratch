@@ -23,33 +23,30 @@ const numFieldBlock = (value: number) => ({
   topLevel: false,
 })
 
-const motionTurnBlock = (opcode: string) => (
-  config: RotateConfig,
-  blockId: string,
-  parent: string,
-  next: string
-) => {
-  const numField = numFieldBlock(config.degrees) as any
-  numField.parent = blockId
+const motionTurnBlock =
+  (opcode: string) =>
+  (config: RotateConfig, blockId: string, parent: string, next: string) => {
+    const numField = numFieldBlock(config.degrees) as any
+    numField.parent = blockId
 
-  return {
-    [numField.id]: numField,
-    [blockId]: {
-      id: blockId,
-      opcode,
-      inputs: {
-        DEGREES: {
-          name: 'DEGREES',
-          block: numField.id,
-          shadow: numField.id,
+    return {
+      [numField.id]: numField,
+      [blockId]: {
+        id: blockId,
+        opcode,
+        inputs: {
+          DEGREES: {
+            name: 'DEGREES',
+            block: numField.id,
+            shadow: numField.id,
+          },
         },
+        fields: {},
+        parent,
+        next,
       },
-      fields: {},
-      parent,
-      next,
-    },
+    }
   }
-}
 
 const WHEN_FLAG_CLICKED = {
   opcode: 'event_whenflagclicked',
@@ -210,7 +207,10 @@ function blockToVm(block: Block) {
 
   rootBlock.next = controlForever.id
 
-  let res = { [rootBlock.id]: rootBlock, [controlForever.id]: controlForever }
+  let res: Record<string, any> = {
+    [rootBlock.id]: rootBlock,
+    [controlForever.id]: controlForever,
+  }
 
   let parentId: string | undefined = controlForever.id
 

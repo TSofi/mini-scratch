@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function TurnRightIcon(props: any = {}) {
   return (
     <svg

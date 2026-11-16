@@ -24,9 +24,9 @@ describe('#variantToBlock', () => {
         inputs: {},
         opcode: 'math_number',
         topLevel: false,
-        parent: 'blockId'
+        parent: 'blockId',
       },
-      'blockId': {
+      blockId: {
         id: 'blockId',
         opcode: 'motion_movesteps',
         inputs: {
@@ -39,7 +39,7 @@ describe('#variantToBlock', () => {
         fields: {},
         parent: 'parentId',
         next: 'nextId',
-      }
+      },
     })
   })
 
@@ -65,9 +65,9 @@ describe('#variantToBlock', () => {
         inputs: {},
         opcode: 'math_number',
         topLevel: false,
-        parent: 'blockId'
+        parent: 'blockId',
       },
-      'blockId': {
+      blockId: {
         id: 'blockId',
         opcode: 'motion_turnright',
         inputs: {
@@ -80,7 +80,7 @@ describe('#variantToBlock', () => {
         fields: {},
         parent: 'parentId',
         next: 'nextId',
-      }
+      },
     })
   })
 
@@ -106,9 +106,9 @@ describe('#variantToBlock', () => {
         inputs: {},
         opcode: 'math_number',
         topLevel: false,
-        parent: 'blockId'
+        parent: 'blockId',
       },
-      'blockId': {
+      blockId: {
         id: 'blockId',
         opcode: 'motion_turnleft',
         inputs: {
@@ -121,7 +121,7 @@ describe('#variantToBlock', () => {
         fields: {},
         parent: 'parentId',
         next: 'nextId',
-      }
+      },
     })
   })
 
@@ -133,7 +133,7 @@ describe('#variantToBlock', () => {
       'nextId'
     )
 
-    const gotoMenuId = result.blockId.inputs.TO.block;
+    const gotoMenuId = result.blockId.inputs.TO.block
 
     expect(result).toEqual({
       [gotoMenuId]: {
@@ -149,7 +149,7 @@ describe('#variantToBlock', () => {
           },
         },
       },
-      'blockId': {
+      blockId: {
         id: 'blockId',
         opcode: 'motion_goto',
         inputs: {
@@ -162,7 +162,7 @@ describe('#variantToBlock', () => {
         fields: {},
         parent: 'parentId',
         next: 'nextId',
-      }
+      },
     })
   })
 })

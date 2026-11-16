@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function ScriptIcon(props: any = {}) {
   return (
     <svg

@@ -34,11 +34,8 @@ export function useBlock({
   setBlocksState,
   path,
 }: Params): Return {
-  const [
-    draggingCoordsRef,
-    draggingCoords,
-    setDraggingCoords,
-  ] = useRefState<Coords | null>(null)
+  const [draggingCoordsRef, draggingCoords, setDraggingCoords] =
+    useRefState<Coords | null>(null)
   const touchPointWithinElemRef = useRef<Coords | null>(null)
 
   const elementRef = useRef<SVGPathElement>(null)
@@ -93,7 +90,9 @@ export function useBlock({
         return
       }
 
-      const elemPos = (e.currentTarget as SVGPathElement).getBoundingClientRect()
+      const elemPos = (
+        e.currentTarget as SVGPathElement
+      ).getBoundingClientRect()
       const { clientX: touchX, clientY: touchY } = e.touches[0]
 
       const touchPointWithinElem = {

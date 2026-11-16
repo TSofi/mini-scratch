@@ -20,7 +20,7 @@ export function Resizeable({
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleBarMove = useCallback(
-    (e) => {
+    (e: React.TouchEvent<HTMLDivElement>) => {
       const touchY = e.touches[0].clientY
       const { top } = containerRef.current?.getBoundingClientRect() as DOMRect
 

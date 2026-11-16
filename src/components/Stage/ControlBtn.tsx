@@ -1,7 +1,7 @@
 import { PauseIcon } from 'components/Icons/PauseIcon'
 import { PlayIcon } from 'components/Icons/PlayIcon'
 import { useVM } from 'lib/vm'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function ControlBtn() {
   const vm = useVM()

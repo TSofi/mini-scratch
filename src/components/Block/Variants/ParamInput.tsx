@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import { BLOCK_SCALE } from '../const'
@@ -20,14 +20,23 @@ export function ParamInput({ onApplyChange, onChange, value, offsetX }: Props) {
       setShowInput(true)
     }
 
-    if (textBoxRef.current) {
-      textBoxRef.current.addEventListener('focus', onFocus)
+    const textBox = textBoxRef.current
+    if (!textBox) {
+      return () => {}
+    }
+
+    textBox.addEventListener('focus', onFocus)
+
+    return () => {
+      textBox.removeEventListener('focus', onFocus)
     }
   }, [textBoxRef])
 
   let textInput = null
   if (showInput) {
-    const textBoxCoords = (textBoxRef.current as HTMLElement).getBoundingClientRect()
+    const textBoxCoords = (
+      textBoxRef.current as HTMLElement
+    ).getBoundingClientRect()
 
     textInput = ReactDOM.createPortal(
       <input

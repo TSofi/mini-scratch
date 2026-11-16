@@ -19,12 +19,9 @@ export type RotateConfig = {
   degrees: number
 }
 
-export type GoToRandomConfig = {}
+export type GoToRandomConfig = Record<string, never>
 
-export type PlaySoundConfig = {}
+export type PlaySoundConfig = Record<string, never>
 
 export type VariantConfig =
-  | MoveConfig
-  | RotateConfig
-  | GoToRandomConfig
-  | PlaySoundConfig
+  MoveConfig | RotateConfig | GoToRandomConfig | PlaySoundConfig

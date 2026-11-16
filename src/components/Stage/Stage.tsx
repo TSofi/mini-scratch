@@ -15,4 +15,4 @@ function StageC(props: any, ref: any) {
   )
 }
 
-export const Stage = React.forwardRef(StageC);
+export const Stage = React.forwardRef(StageC)

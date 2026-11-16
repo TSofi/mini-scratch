@@ -1,7 +1,7 @@
 import { Block } from 'components/Block/Block'
 import { useVM } from 'lib/vm'
 import { cloneDeep } from 'lodash'
-import React, { RefObject, useCallback } from 'react'
+import { RefObject, useCallback } from 'react'
 
 import './style.css'
 import { useBlockLibrary } from './useBlockLibrary'

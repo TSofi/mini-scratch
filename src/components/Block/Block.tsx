@@ -1,9 +1,7 @@
-/* eslint-disable complexity */
-
 import clsx from 'clsx'
 import { Coords } from 'lib/types'
 import { get } from 'lodash'
-import React, { RefObject } from 'react'
+import { RefObject } from 'react'
 import ReactDOM from 'react-dom'
 import { Block as BlockT, DropDir, TargetBlocksState } from 'state/scriptEditor'
 

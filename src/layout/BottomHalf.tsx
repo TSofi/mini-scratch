@@ -2,7 +2,7 @@ import { ImageIcon } from 'components/Icons/ImageIcon'
 import { ScriptIcon } from 'components/Icons/ScriptIcon'
 import { ScriptEditor } from 'components/ScriptEditor'
 import { SpriteLibrary } from 'components/SpriteLibrary'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { easterEggOnState } from 'state/scriptEditor'
 

@@ -19,11 +19,8 @@ export function useSuggestDrop({
   elementRef: RefObject<SVGPathElement>
   setBlocksState: (newState: any) => void
 }) {
-  const [
-    suggestDropRef,
-    suggestDrop,
-    setSuggestDrop,
-  ] = useRefState<null | DropDir>(null)
+  const [suggestDropRef, suggestDrop, setSuggestDrop] =
+    useRefState<null | DropDir>(null)
 
   const [{ isDragging, draggedBlockPath }] = useRecoilState(draggingState)
 
@@ -40,7 +37,8 @@ export function useSuggestDrop({
     const firstBlockInTheGroup = path.split('.').length === 1
 
     function onTouchMove(draggedBlockCoords: Coords) {
-      const currBlockCoords = elementRef.current?.getBoundingClientRect() as DOMRect
+      const currBlockCoords =
+        elementRef.current?.getBoundingClientRect() as DOMRect
       const suggestDropDir = getSuggestDropDir(
         draggedBlockCoords,
         suggestDropRef.current === null ||

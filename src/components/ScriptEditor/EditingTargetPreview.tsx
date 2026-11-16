@@ -1,6 +1,6 @@
 import { getSpriteUrl } from 'components/SpriteLibrary/SpriteItem'
 import { useVM } from 'lib/vm'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { easterEggOnState, editingTargetState } from 'state/scriptEditor'
 

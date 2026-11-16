@@ -3,7 +3,7 @@ import { BlockLibrary } from 'components/BlockLibrary'
 import { refreshVmProject } from 'lib/translateBlocks'
 import { useVM } from 'lib/vm'
 import { cloneDeep, isEmpty } from 'lodash'
-import React, { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useRecoilState } from 'recoil'
 import {
   blocksState as blocksStateRecoil,

@@ -1,13 +1,14 @@
 // @ts-nocheck
 
 import React, { useContext } from 'react'
-import AudioEngine from 'scratch-audio'
-// Need to import already pre-built version since it errors out
-// in this app otherwise. Probably a matter of webpack config.
-import ScratchRender from 'scratch-render/dist/web/scratch-render'
-import ScratchStorage from 'scratch-storage'
-import ScratchSVGRenderer from 'scratch-svg-renderer'
-import VirtualMachine from 'scratch-vm/src/virtual-machine'
+// Scratch libraries are imported from their pre-built bundles: their source
+// code relies on webpack-only loaders (`require('!raw-loader!...')`, etc.)
+// and Node built-ins (`events`) that Vite does not provide.
+import AudioEngine from 'scratch-audio/dist.js'
+import ScratchRender from 'scratch-render/dist/web/scratch-render.js'
+import ScratchStorage from 'scratch-storage/dist/web/scratch-storage.js'
+import ScratchSVGRenderer from 'scratch-svg-renderer/dist/web/scratch-svg-renderer.js'
+import VirtualMachine from 'scratch-vm/dist/web/scratch-vm.js'
 
 import { INITIAL_PROJECT } from './initialProject'
 
